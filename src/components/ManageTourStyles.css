@@ -1,0 +1,68 @@
+/* ManageToursPage.css */
+
+.manage-tours-container {
+    margin-top: 20px;
+  }
+  
+  .manage-tours-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .manage-tours-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .manage-tours-button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .manage-tours-button:hover {
+    background-color: #45a049;
+  }
+  
+  .manage-tours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .manage-tours-table th, .manage-tours-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .manage-tours-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .manage-tours-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .manage-tours-table tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .manage-tours-action-buttons button {
+    margin-right: 5px;
+    padding: 6px 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .manage-tours-action-buttons button:hover {
+    background-color: #005f7b;
+  }
+  

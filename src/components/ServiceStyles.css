@@ -1,0 +1,31 @@
+.service-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    padding-top: 150px;
+}
+
+.service-section {
+    margin-bottom: 30px;
+}
+
+.service-section h1,
+.service-section h2,
+.service-section h3 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.service-summary {
+    font-style: italic;
+    color: #777;
+    margin-top: 40px;
+}
