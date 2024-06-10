@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import Cookies from "js-cookie";
 import "./LoginFormStyles.css";
 
 function LoginForm({ onClose }) {
@@ -104,6 +105,9 @@ function LoginForm({ onClose }) {
       let result = await response.json();
       console.log(result);
 
+      // Save token to cookies
+      Cookies.set('token', result.token, { expires: 7 }); // Expires in 7 days
+
       alert("Login successful");
       login(result);  // Update auth context
       setUsername("");
@@ -129,8 +133,10 @@ function LoginForm({ onClose }) {
   return (
     <div className="login-form-overlay">
       <div className="login-form-container">
-        <h2>{isLogin ? "Đăng Nhập" : "Đăng ký tài khoản"}</h2>
+        <h3>{isLogin ? "Đăng Nhập" : "Đăng ký tài khoản"}</h3>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
+        <i onClick={onClose} className="fa-solid fa-xmark icon-close"></i>
+
         <form>
           <div className="form-group">
             <input
@@ -201,10 +207,7 @@ function LoginForm({ onClose }) {
           )}
         </form>
         <button className="toggle-button" onClick={() => setIsLogin(!isLogin)}>
-          {isLogin ? "Bạn chưa có tài khoản?" : "Đăng Nhập ngay!"}
-        </button>
-        <button className="close-button" onClick={onClose}>
-          Thoát
+          {isLogin ? "Bạn chưa có tài khoản ?" : "Đăng Nhập ngay!"}
         </button>
       </div>
     </div>

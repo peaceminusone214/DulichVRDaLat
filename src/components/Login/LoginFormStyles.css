@@ -11,6 +11,7 @@
   }
   
   .login-form-container {
+    position: relative;
     width: 300px;
     padding: 20px;
     background-color: #fff;
@@ -25,7 +26,7 @@
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-block: 20px;
   }
   
   .form-input {
@@ -49,4 +50,19 @@
   .login-submit-button:hover,
   .close-button:hover {
     background-color: #e91e63;
+  }
+
+  .toggle-button {
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .icon-close {
+    cursor: pointer;
+    top: 12px;
+    right: 12px;
+    position: absolute;
+  }
+  .icon-close:hover {
+    opacity: 0.7;
   }

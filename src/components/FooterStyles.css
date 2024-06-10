@@ -15,6 +15,7 @@ body{
 .row{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 ul{
   list-style: none;
@@ -41,10 +42,10 @@ ul{
   position: absolute;
   left:0;
   bottom: -10px;
-  background-color: #e91e63;
+  background-color: #045269;
   height: 2px;
   box-sizing: border-box;
-  width:70px;
+  width:100%;
 }
 .footer-col ul li:not(:last-child){
   margin-bottom: 10px;

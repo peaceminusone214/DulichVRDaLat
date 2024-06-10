@@ -13,11 +13,7 @@ const AdminPage = () => {
           <h1>Tourism Dashboard</h1>
         </div>
         <nav className="navigation">
-          <ul className="nav-links">
-            <li><Link to="/tours">Tours</Link></li>
-            <li><Link to="/bookings">Bookings</Link></li>
-            <li><button onClick={logout} className="logout-button">Logout</button></li> {/* Logout button */}
-          </ul>
+         <button onClick={logout} className="logout-button">Logout</button>
         </nav>
       </header>
 

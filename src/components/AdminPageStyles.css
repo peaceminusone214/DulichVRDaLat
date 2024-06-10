@@ -29,7 +29,7 @@
 }
 
 .navigation .logout-button {
-  background-color: #ff4b5c;
+  background-color: rgb(15, 62, 124);
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -37,7 +37,7 @@
 }
 
 .navigation .logout-button:hover {
-  background-color: #ff1f3b;
+  background-color: #0b9c7d;
 }
 
 .content-container {
