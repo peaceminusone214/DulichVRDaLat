@@ -57,6 +57,24 @@ UserSchema.pre('save', async function(next) {
 const User = mongoose.model('users', UserSchema);
 User.createIndexes();
 
+// Define Tour schema and model
+const TourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  locations: {
+    type: [String], // Array of strings
+    required: true
+  },
+  duration: {
+    type: Number, // Duration in days
+    required: true
+  }
+});
+
+const Tour = mongoose.model('tours', TourSchema);
+
 // Middleware
 app.use(express.json());
 app.use(cors());
@@ -111,6 +129,80 @@ app.post("/login", async (req, res) => {
   } catch (e) {
     res.status(500).send('Something went wrong.');
     console.error('Error during login:', e);
+  }
+});
+
+// Tours CRUD endpoints
+
+// Create a new tour
+app.post("/tours", async (req, res) => {
+  try {
+    const { name, locations, duration } = req.body;
+    const tour = new Tour({ name, locations, duration });
+    const result = await tour.save();
+    res.status(201).send(result);
+    console.log('Tour created:', result);
+  } catch (e) {
+    res.status(500).send('Something went wrong.');
+    console.error('Error creating tour:', e);
+  }
+});
+
+// Get all tours
+app.get("/tours", async (req, res) => {
+  try {
+    const tours = await Tour.find();
+    res.status(200).send(tours);
+    console.log('Tours retrieved:', tours);
+  } catch (e) {
+    res.status(500).send('Something went wrong.');
+    console.error('Error retrieving tours:', e);
+  }
+});
+
+// Get a specific tour by ID
+app.get("/tours/:id", async (req, res) => {
+  try {
+    const tour = await Tour.findById(req.params.id);
+    if (!tour) {
+      return res.status(404).send('Tour not found');
+    }
+    res.status(200).send(tour);
+    console.log('Tour retrieved:', tour);
+  } catch (e) {
+    res.status(500).send('Something went wrong.');
+    console.error('Error retrieving tour:', e);
+  }
+});
+
+// Update a tour by ID
+app.put("/tours/:id", async (req, res) => {
+  try {
+    const { name, locations, duration } = req.body;
+    const tour = await Tour.findByIdAndUpdate(req.params.id, { name, locations, duration }, { new: true });
+    if (!tour) {
+      return res.status(404).send('Tour not found');
+    }
+    res.status(200).send(tour);
+    console.log('Tour updated:', tour);
+  } catch (e) {
+    res.status(500).send('Something went wrong.');
+    console.error('Error updating tour:', e);
+  }
+});
+
+// Delete a tour by ID
+app.delete("/tours/:id", async (req, res) => {
+  try {
+    const tour = await Tour.findByIdAndDelete(req.params.id);
+    if (!tour) {
+      return res.status(404).send('Tour not found');
+    }
+    res.status(200).send('Tour deleted');
+    console.log('Tour deleted:', tour);
+  } catch (e) {
+    res.status(500).send('Something went wrong.');
+    console.error('Error deleting tour:', e);
   }
 });
 

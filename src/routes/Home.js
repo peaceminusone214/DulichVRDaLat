@@ -11,7 +11,7 @@ function Home() {
       <Hero
         cName="hero"
         heroImg={homeBackgroud}
-        title="Welcome to DaLat City"
+        title="Chào mừng bạn đến với thành phố Đà Lạt"
         text="Hãy chọn địa điểm lý tưởng dành cho bạn."
         buttonText="Xem các gói du lịch"
         url="/service"

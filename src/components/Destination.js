@@ -4,7 +4,7 @@ import DestinationData from "./DestinationData";
 const Destination = () => {
   return (
     <div className="destination">
-      <h1>Famous destinations</h1>
+      <h1>Các địa điểm nổi tiếng</h1>
       <p>Tương tác với hình ảnh để xem ở chế độ 360°</p>
       <DestinationData
         className="first-des"

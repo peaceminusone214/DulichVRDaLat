@@ -5,8 +5,8 @@ import doichecaudat from "../assets/doi-che-cau-dat.jpg"
 function Trip() {
   return (
     <div className="trip">
-      <h1>Recent trips</h1>
-      <p>Các gói du lịch gần đây</p>
+      <h1>Các địa điểm gần bạn</h1>
+
       <div className="tripcard">
         <TripData
           Link="/Service"
